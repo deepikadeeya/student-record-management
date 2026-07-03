@@ -18,4 +18,6 @@ jobs:
             cd ~/srms-app
             git pull origin main
             pkill -f "python3 app.py" || true
-            nohup python3 app.py > app.log 2>&1 &
+            sleep 2
+            setsid nohup python3 app.py > app.log 2>&1 < /dev/null &
+            disown
