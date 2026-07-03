@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Poppins', Arial, sans-serif; margin: 0; background: #f4f7fb; color: #2d3142; }
+        .navbar { background: linear-gradient(135deg, #6C63FF 0%, #4C8DF7 100%); padding: 22px 40px; color: white; }
+        .navbar h1 { margin: 0; font-size: 22px; font-weight: 600; }
+        .container { padding: 30px 40px; display: flex; justify-content: center; }
+        form {
+            background: white; padding: 30px; max-width: 420px; width: 100%;
+            border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        label { font-size: 13px; font-weight: 500; color: #4C4F6B; }
+        input {
+            width: 100%; padding: 10px 12px; margin: 6px 0 16px;
+            border: 1px solid #E0E3EE; border-radius: 8px; font-family: inherit; font-size: 14px;
+        }
+        input:focus { outline: none; border-color: #6C63FF; }
+        button {
+            padding: 10px 22px; background: linear-gradient(135deg, #43C6AC 0%, #2E9E77 100%);
+            color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 500; font-size: 14px;
+        }
+        a { display: inline-block; margin-top: 14px; color: #6C63FF; text-decoration: none; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="navbar"><h1>➕ Add New Student</h1></div>
+    <div class="container">
+        <form method="POST">
+            <label>Name</label>
+            <input type="text" name="name" required>
+            <label>Email</label>
+            <input type="email" name="email" required>
+            <label>Course</label>
+            <input type="text" name="course">
+            <label>Year of Study</label>
+            <input type="number" name="year_of_study" min="1" max="4">
+            <label>Phone</label>
+            <input type="text" name="phone">
+            <label>Address</label>
+            <input type="text" name="address">
+            <br>
+            <button type="submit">Add Student</button>
+            <br>
+            <a href="{{ url_for('index') }}">&laquo; Back to list</a>
+        </form>
+    </div>
+</body>
+</html>
